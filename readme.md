@@ -58,3 +58,15 @@
 - Add: org.apache.maven.cli.MavenCli=debug
 - Add: org.eclipse.aether.internal.impl=debug
 - Add: org.apache.maven.project.DefaultProjectDependenciesResolver=debug
+
+# Local repository file structure
+- /{group}/{artifact}/
+- /{group}/{artifact}/resolver-status.properties [Trace file used by Maven]
+- /{group}/{artifact}/maven-metadata-<repository-id>.xml [Downloaded from remote repository-id]
+- /{group}/{artifact}/maven-metadata-<repository-id>.xml.sha1 [Downloaded from remote repository-id]
+- /{group}/{artifact}/{version}/_remote.repository [Trace file used by Maven]
+- /{group}/{artifact}/{version}/<artifact>-<version>.pom  [Downloaded from remote repository]
+- /{group}/{artifact}/{version}/<artifact>-<version>.pom.sha1 [Downloaded from remote repository]
+- /{group}/{artifact}/{version}/<artifact>-<version>.<packaging> [Downloaded from remote repository]
+- /{group}/{artifact}/{version}/<artifact>-<version>.<packaging>.sha1 [Downloaded from remote repository]
+
