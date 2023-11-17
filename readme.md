@@ -69,4 +69,4 @@
 - /{group}/{artifact}/{version}/<artifact>-<version>.pom.sha1 [Downloaded from remote repository]
 - /{group}/{artifact}/{version}/<artifact>-<version>.<packaging> [Downloaded from remote repository]
 - /{group}/{artifact}/{version}/<artifact>-<version>.<packaging>.sha1 [Downloaded from remote repository]
-
+- /{group}/{artifact}/{version}/<artifact>-<version>.<packaging>.lastUpdated [Trace file used by Maven]
