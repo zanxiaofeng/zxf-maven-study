@@ -55,4 +55,6 @@
 - Edit: ${maven-home}/conf/logging/simpleLogger.properties
 - Update: org.slf4j.simpleLogger.showLogName=true
 - Add: org.slf4j.simpleLogger.log.org.apache.maven.plugins.dependency=debug
-- 
+- Add: org.apache.maven.cli.MavenCli=debug
+- Add: org.eclipse.aether.internal.impl=debug
+- Add: org.apache.maven.project.DefaultProjectDependenciesResolver=debug
