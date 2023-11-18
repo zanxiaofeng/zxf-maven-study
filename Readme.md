@@ -54,19 +54,29 @@
 # how to customer logging setting for maven
 - Edit: ${maven-home}/conf/logging/simpleLogger.properties
 - Update: org.slf4j.simpleLogger.showLogName=true
-- Add: org.slf4j.simpleLogger.log.org.apache.maven.plugins.dependency=debug
 - Add: org.apache.maven.cli.MavenCli=debug
-- Add: org.eclipse.aether.internal.impl=debug
+- Add: org.apache.maven.DefaultMaven=debug
 - Add: org.apache.maven.project.DefaultProjectDependenciesResolver=debug
+- Add: org.apache.maven.plugin.version.internal.DefaultPluginVersionResolver=debug
+- Add: org.apache.maven.plugin.internal.DefaultPluginDependenciesResolver=debug
+- Add: org.apache.maven.plugins.dependency=debug
+- Add: org.eclipse.aether.internal.impl.DefaultLocalRepositoryProvider=debug
+- Add: org.eclipse.aether.internal.impl.DefaultRemoteRepositoryManager=debug
+- Add: org.eclipse.aether.internal.impl.DefaultUpdatePolicyAnalyzer=debug
+- Add: org.eclipse.aether.internal.impl.DefaultTransporterProvider=debug
+- Add: org.eclipse.aether.internal.impl.DefaultRepositoryConnectorProvider=debug
+- Add: org.eclipse.aether.internal.impl.TrackingFileManager=debug
 
 # Local repository file structure
 - /{group}/{artifact}/
 - /{group}/{artifact}/resolver-status.properties [Trace file used by Maven]
-- /{group}/{artifact}/maven-metadata-<repository-id>.xml [Downloaded from remote repository-id]
-- /{group}/{artifact}/maven-metadata-<repository-id>.xml.sha1 [Downloaded from remote repository-id]
+- /{group}/{artifact}/maven-metadata-local.xml [Installed from local]
+- /{group}/{artifact}/maven-metadata-<repository-id>.xml [Downloaded from remote repository-id, Only when there are duplicate version in multiple repository]
+- /{group}/{artifact}/maven-metadata-<repository-id>.xml.sha1 [Downloaded from remote repository-id, Only when there are duplicate version in multiple repository]
 - /{group}/{artifact}/{version}/_remote.repository [Trace file used by Maven]
 - /{group}/{artifact}/{version}/<artifact>-<version>.pom  [Downloaded from remote repository]
 - /{group}/{artifact}/{version}/<artifact>-<version>.pom.sha1 [Downloaded from remote repository]
+- /{group}/{artifact}/{version}/<artifact>-<version>.pom.lastUpdated [Trace file used by Maven]
 - /{group}/{artifact}/{version}/<artifact>-<version>.<packaging> [Downloaded from remote repository]
 - /{group}/{artifact}/{version}/<artifact>-<version>.<packaging>.sha1 [Downloaded from remote repository]
 - /{group}/{artifact}/{version}/<artifact>-<version>.<packaging>.lastUpdated [Trace file used by Maven]

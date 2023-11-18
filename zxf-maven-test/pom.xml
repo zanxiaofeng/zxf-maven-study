@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>zxf.example</groupId>
+        <artifactId>zxf-maven-study</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>zxf-maven-test</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- For testing auto purge jackson related jars
+             Please use `maven -X clean' to see detail logs
+        -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.15.0</version>
+        </dependency>
+
+        <!--Log4j v2-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>purge-local-dependencies-of-special-by-manual-include</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>purge-local-repository</goal>
+                        </goals>
+                        <configuration>
+                            <!--
+                                1. include will only delete the jars which current project referred; Delete by dependencies.
+                                2. manualInclude will delete inner or outer jars of current project; Delete by path;
+                            -->
+                            <manualIncludes>
+                                <manualInclude>com.fasterxml.jackson.core</manualInclude>
+                            </manualIncludes>
+                            <reResolve>false</reResolve>
+                            <verbose>true</verbose>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>purge-local-dependencies-of-special-by-include</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>purge-local-repository</goal>
+                        </goals>
+                        <configuration>
+                            <!--
+                                1. include will only delete the jars which current project referred; Delete by dependencies.
+                                2. manualInclude will delete inner or outer jars of current project; Delete by path;
+                            -->
+                            <includes>
+                                <include>org.apache.logging.log4j</include>
+                            </includes>
+                            <reResolve>false</reResolve>
+                            <verbose>true</verbose>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
