@@ -15,6 +15,11 @@
 - https://github.com/apache/maven-dependency-plugin/tree/maven-dependency-plugin-3.6.1 [maven-dependency-plugin]
 - https://github.com/spring-projects/spring-boot/tree/v2.7.9/spring-boot-project/spring-boot-tools/spring-boot-maven-plugin [spring-boot-maven-plugin]
 
+
+# Command
+- mvn help:effective-pom
+- mvn help:effective-settings
+
 # maven Core Classes
 - maven-core/src/main/java/org/apache/maven/Maven.java
 - maven-core/src/main/java/org/apache/maven/DefaultMaven.java
