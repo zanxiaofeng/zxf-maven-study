@@ -67,10 +67,10 @@
                 <version>1.0-SNAPSHOT</version>
                 <executions>
                     <execution>
-                        <id>zxf-test</id>
+                        <id>myInfo</id>
                         <phase>clean</phase>
                         <goals>
-                            <goal>zxf</goal>
+                            <goal>myInfo</goal>
                         </goals>
                     </execution>
                 </executions>

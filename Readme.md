@@ -19,6 +19,7 @@
 # Command
 - mvn help:effective-pom
 - mvn help:effective-settings
+- mvn dependency:tree -Dverbose=true
 
 # maven Core Classes
 - maven-core/src/main/java/org/apache/maven/Maven.java
@@ -71,6 +72,7 @@
 - Add: org.eclipse.aether.internal.impl.DefaultTransporterProvider=debug
 - Add: org.eclipse.aether.internal.impl.DefaultRepositoryConnectorProvider=debug
 - Add: org.eclipse.aether.internal.impl.TrackingFileManager=debug
+- Add: zxf.maven.plugin.myInfoMojo=debug
 
 # Local repository file structure
 - /{group}/{artifact}/
