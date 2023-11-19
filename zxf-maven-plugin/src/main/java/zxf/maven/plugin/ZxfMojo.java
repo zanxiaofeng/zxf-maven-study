@@ -1,28 +1,52 @@
 package zxf.maven.plugin;
 
+import org.apache.maven.execution.MavenSession;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
+import org.eclipse.aether.repository.RemoteRepository;
 
-import javax.annotation.Resource;
-import java.io.File;
 import java.util.List;
 
+/**
+ * Goal which touches a timestamp file.
+ *
+ * @deprecated Don't use!
+ */
 @Mojo(name = "zxf")
 public class ZxfMojo extends AbstractMojo {
 
-    @Parameter( defaultValue = "${project.build.sourceDirectory}", required = true )
-    private File sourceDirectory;
+    /**
+     * Location of the file.
+     */
+    @Parameter(defaultValue = "${project}", readonly = true, required = true)
+    private MavenProject project;
 
-    @Parameter( defaultValue = "${project.build.resources}", required = true )
-    private List<Resource> resources;
+    /**
+     * Location of the file.
+     */
+    @Parameter(defaultValue = "${session}", readonly = true, required = true)
+    private MavenSession session;
 
-    @Parameter( defaultValue = "${project.build.directory}", property = "outputDir", required = true )
-    private File outputDirectory;
+    /**
+     * Location of the file.
+     */
+    @Parameter(defaultValue = "${project.remoteProjectRepositories}")
+    private List<RemoteRepository> projectRepos;
+
+    /**
+     * Location of the file.
+     */
+    @Parameter(property = "verbose", defaultValue = "false")
+    private boolean verbose;
 
     public void execute() throws MojoExecutionException {
-        System.out.println("$$$$$$$$$$$$$$$$$$$$teste$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        getLog().info("Start to execute zxf plugin with verbose = " + verbose);
+        if (verbose) {
+            getLog().debug("Debug info in zxf");
+        }
     }
 }
