@@ -55,6 +55,8 @@
 # maven-dependency-plugin Core Classes
 
 # spring-boot-maven-plugin Core Classes
+- spring-boot-project/spring-boot-tools/spring-boot-maven-plugin/src/main/java/org/springframework/boot/maven/AbstractPackagerMojo.java
+- spring-boot-project/spring-boot-tools/spring-boot-maven-plugin/src/main/java/org/springframework/boot/maven/RepackageMojo.java
 
 
 # how to customer logging setting for maven
