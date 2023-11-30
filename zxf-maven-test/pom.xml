@@ -116,6 +116,19 @@
                             <verbose>true</verbose>
                         </configuration>
                     </execution>
+                    <!--  For purge all dependencies
+                    <execution>
+                        <id>purge-local-dependencies-of-all</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>purge-local-repository</goal>
+                        </goals>
+                        <configuration>
+                            <reResolve>false</reResolve>
+                            <verbose>true</verbose>
+                        </configuration>
+                    </execution>
+                    -->
                 </executions>
             </plugin>
         </plugins>
