@@ -1,0 +1,1 @@
+mvn -s ./maven-setting-for-nexus-a.xml clean install
