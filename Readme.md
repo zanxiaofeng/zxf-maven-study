@@ -52,6 +52,10 @@
 - maven-embedder/src/main/java/org/apache/maven/cli/transfer/Slf4jMavenTransferListener.java [Default]
 - maven-embedder/src/main/java/org/apache/maven/cli/logging/Slf4jConfiguration.java
 
+# 
+- org.eclipse.aether.spi.connector.RepositoryConnector
+- org.eclipse.aether.connector.basic.BasicRepositoryConnector
+
 # maven-dependency-plugin Core Classes
 
 # spring-boot-maven-plugin Core Classes
