@@ -7,5 +7,5 @@
 
 # Commands
 - mvn help:effective-pom
-- mvn -s ./maven-setting-for-nexus-a.xml help:effective-settings
+- mvn -s ./maven-setting-for-nexus-a.xml --debug help:effective-settings
 - mvn -s ./maven-setting-for-nexus-a.xml dependency:purge-local-repository dependency:tree -Dverbose=true

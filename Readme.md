@@ -23,6 +23,10 @@
 - mvn help:effective-settings
 - mvn dependency:tree -Dverbose=true
 
+# Setting files
+- Maven level setting
+- User level setting
+
 # maven Core Classes
 - maven-core/src/main/java/org/apache/maven/Maven.java
 - maven-core/src/main/java/org/apache/maven/DefaultMaven.java
@@ -53,6 +57,7 @@
 - maven-embedder/src/main/java/org/apache/maven/cli/transfer/ConsoleMavenTransferListener.java
 - maven-embedder/src/main/java/org/apache/maven/cli/transfer/Slf4jMavenTransferListener.java [Default]
 - maven-embedder/src/main/java/org/apache/maven/cli/logging/Slf4jConfiguration.java
+- maven-embedder/src/main/java/org/apache/maven/cli/configuration/SettingsXmlConfigurationProcessor.java
 
 # 
 - org.eclipse.aether.spi.connector.RepositoryConnector
