@@ -1,4 +1,6 @@
 # Purge local repository by command
+## Delete all artifact-versions
+- mvn dependency:purge-local-repository -DreResolve=false -Dverbose=true
 ## Delete a specified artifact-version by include
 - mvn dependency:purge-local-repository -Dinclude=org.apache.logging.log4j:log4j-api -DreResolve=false -Dverbose=true
 ## Delete all artifact-versions of a specified group of by include
