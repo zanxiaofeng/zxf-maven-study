@@ -5,6 +5,9 @@
 - 使用Ｃurl命令从不同Repository分别下载POM和JAR进行比对。
 - 使用mvn命令配合定制的POM文件（只包含要检查的依赖），配合面向不同仓库的setting文件（配置不同的Local Repository路径），从而将该依赖从不同仓库下载的不同的Local Repository路径。
 
+# Maven Setting
+- effective-settings = program level setting + user level setting
+
 # Commands
 - mvn help:effective-pom
 - mvn -s ./maven-setting-for-nexus-a.xml --debug help:effective-settings
