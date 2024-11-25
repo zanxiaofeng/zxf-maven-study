@@ -24,8 +24,8 @@
 - mvn --debug dependency:tree -Dverbose=true
 
 # Setting files
-- Maven level setting
-- User level setting
+- Global level setting(In maven folder)
+- User level setting(In user folder)
 
 # maven Core Classes
 - maven-core/src/main/java/org/apache/maven/Maven.java
