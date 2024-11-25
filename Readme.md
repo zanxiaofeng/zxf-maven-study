@@ -19,9 +19,9 @@
 
 
 # Command
-- mvn help:effective-pom
-- mvn help:effective-settings
-- mvn dependency:tree -Dverbose=true
+- mvn -X help:effective-pom
+- mvn -X help:effective-settings
+- mvn --debug dependency:tree -Dverbose=true
 
 # Setting files
 - Maven level setting
