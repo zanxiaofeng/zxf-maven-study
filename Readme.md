@@ -12,6 +12,7 @@
 ## Delete all artifacts and versions of a specified group by manualInclude
 - mvn dependency:purge-local-repository -X -DmanualInclude=org.apache.logging.log4j -DreResolve=false -Dverbose=true
 
+
 # Source Code
 - https://github.com/apache/maven/tree/maven-3.6.3 [Maven]
 - https://github.com/apache/maven-dependency-plugin/tree/maven-dependency-plugin-3.6.1 [maven-dependency-plugin]
@@ -22,10 +23,32 @@
 - mvn -X help:effective-pom
 - mvn -X help:effective-settings
 - mvn --debug dependency:tree -Dverbose=true
+- mvn help:active-profiles
 
-# Setting files
+
+# Maven Setting
 - Global level setting(In maven folder)
 - User level setting(In user folder)
+
+
+# Maven Profile
+## Profile Scope
+- Project-specific profiles go into the project’s pom.xml file
+- User-specific profiles go into the user’s settings.xml file
+- Global profiles go into the global settings.xml file
+## Activating Profiles
+- mvn help:active-profiles
+## Activating a Profile
+- By parameter -P <profile>
+- By setting in xml(pom.xml or settings.xml)
+- > Active by Default
+- > Based on a Property
+- > Based on the JDK Version
+- > Based on the Operating System
+- > Based on a File
+## Deactivating a Profile
+- By parameter -P -<profile>
+
 
 # maven Core Classes
 - maven-core/src/main/java/org/apache/maven/Maven.java
